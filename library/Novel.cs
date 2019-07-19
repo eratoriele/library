@@ -2,14 +2,20 @@
 {
     internal class Novel : Book
     {
-        public Novel(string bookName, string writtenIn, string writtenBy, int pageCount) : 
-            base(bookName, writtenIn, writtenBy, pageCount)
+
+        private string ISBN;
+
+        public Novel(string bookName, string writtenBy, string ISBN) : 
+            base(bookName, writtenBy)
         {
+
+            this.ISBN = ISBN;
+
         }
 
         public override string ToString()
         {
-            return BookName + " was written by " + WrittenBy + " in " + WrittenIn + ".\nIt is " + PageCount + " pages long.\n";
+            return BookName + " was written by " + WrittenBy + ".\nISBN number:" + ISBN + ".\n";
         }
     }
 }

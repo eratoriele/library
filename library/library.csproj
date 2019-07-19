@@ -45,6 +45,10 @@
   <ItemGroup>
     <Compile Include="Book.cs" />
     <Compile Include="Novel.cs" />
+    <Compile Include="Comic.cs" />
+    <Compile Include="Digital.cs" />
+    <Compile Include="Music.cs" />
+    <Compile Include="Movie.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

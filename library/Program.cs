@@ -10,11 +10,14 @@ namespace library
     {
         static void Main(string[] args)
         {
+
             Console.WriteLine("To be a library project with MSSQL\n");
 
-            Novel n1 = new Novel("bora's bizarre adventures", "22-06-1998", "Bora", 500);
+            Novel n1 = new Novel("African Folktales	", "Roger D. Abrahams", "9780394721170");
 
-            Console.WriteLine(n1.ToString());
+            Music m1 = new Music("Pallet", true, "Future Core");
+
+            Console.WriteLine(n1.ToString() + m1.ToString());
 
         }
     }
