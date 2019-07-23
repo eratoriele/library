@@ -15,12 +15,23 @@ namespace library
 
             string connectionString = null;
             SqlConnection cnn;
+            SqlCommand command;
+            SqlDataReader dataReader;
 			connectionString = "Data Source=DESKTOP-3DJI5UM;Initial Catalog=library_csharp;Integrated Security=SSPI;";
             cnn = new SqlConnection(connectionString);
             try
             {
                 cnn.Open();
-                Console.WriteLine("Connection Open ! ");
+                command = new SqlCommand("SELECT * FROM Novels", cnn);
+                dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    Novel n1 = new Novel(dataReader.GetString(1), dataReader.GetString(2), dataReader.GetString(3));
+                    Console.WriteLine(n1.ToString());
+                }
+                dataReader.Close();
+                command.Dispose();
+                
                 cnn.Close();
             }
             catch (Exception ex)
